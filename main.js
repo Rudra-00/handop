@@ -19,7 +19,7 @@ function take_snapshot()
  });
 }
 console.log('ml5 version',ml5.version);
-classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/RvIFF94vf/',modelLoaded);
+classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/RvIFF94vf/model.json',modelLoaded);
 
 function modelLoaded()
 {
@@ -38,7 +38,7 @@ function check()
   var img=document.getElementById("capture_image");
   classifier.classify(img,gotResult);
 }
-function gotResult(error,result)
+function gotResult(error,results)
 {
   if(error){
     console.error(error);
